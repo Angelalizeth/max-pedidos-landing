@@ -43,25 +43,46 @@
       color: #888;
     }
   </style>
+  
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N577MHDW9D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-N577MHDW9D');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N577MHDW9D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N577MHDW9D');
+  </script>
 </head>
 <body>
-  <!-- Pon aquí la URL de tu logo -->
+  <!-- Logo -->
   <img src="Logo Max Pedidos.png" alt="Logo MAX PEDIDOS" class="logo" />
   
   <h1>MAX PEDIDOS</h1>
   <p>Aplicativo para que nuestros clientes ingresen sus pedidos de productos LAIVE de manera más rápida y sencilla.</p>
-  <a href="https://drive.google.com/uc?export=download&id=1T9u5iXOYo9tGIQcZXHuctDVTab7-uJDF" class="button" download>Descargar APP</a>
+  
+  <!-- Botón con id para el evento -->
+  <a 
+    id="btnDescargar"
+    href="https://drive.google.com/uc?export=download&id=1T9u5iXOYo9tGIQcZXHuctDVTab7-uJDF" 
+    class="button" 
+    download>
+    Descargar APP
+  </a>
+  
   <p>Una vez descargado, abre el archivo para instalar la app en tu dispositivo Android.</p>
+  
   <footer>© 2025 MAX PEDIDOS</footer>
+
+  <!-- Evento personalizado GA4 -->
+  <script>
+    document.getElementById("btnDescargar").addEventListener("click", function() {
+      gtag("event", "descargar_app", {
+        event_category: "interaccion",
+        event_label: "Boton Descargar",
+        value: 1
+      });
+    });
+  </script>
 </body>
 </html>
 
